@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserView, MobileView } from "react-device-detect";
+import "./App.css";
+import Form from "./Form";
 
 function App() {
+  const [currentErrors, setCurrentErrors] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [totalErrors, setTotalErrors] = useState([]);
+  const [totalTime, setTotalTime] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="wrapper">
+        <BrowserView>
+          <h1>This test is only available on a mobile screen.</h1>
+        </BrowserView>
+        <MobileView>
+          <Form />
+        </MobileView>
+      </div>
     </div>
   );
 }
