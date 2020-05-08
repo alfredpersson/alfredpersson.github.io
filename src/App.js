@@ -4,20 +4,16 @@ import "./App.css";
 import Form from "./Form";
 
 function App() {
-  const [currentErrors, setCurrentErrors] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [totalErrors, setTotalErrors] = useState([]);
-  const [totalTime, setTotalTime] = useState([]);
 
   return (
     <div className="App">
       <div className="wrapper">
-        <BrowserView>
+        {/* <BrowserView>
           <h1>This test is only available on a mobile screen.</h1>
         </BrowserView>
-        <MobileView>
+        <MobileView> */}
           <Form />
-        </MobileView>
+        {/* </MobileView> */}
       </div>
     </div>
   );
